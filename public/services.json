@@ -1,0 +1,45 @@
+[
+    {
+        "image": "https://i.ibb.co/yyLwPCH/Group-1373.png",
+        "name": "Anti Age Face Treatment",
+        "price": 199,
+        "description": "Anti-aging treatments are specifically designed to reduce the appearance of wrinkles, fine lines, and sagging skin.",
+        "slots": [
+            "10.00 AM - 12.00 AM",
+            "12.00 AM - 2.00 AM",
+            "2.00 PM - 4.00 PM",
+            "4.00 PM - 6.00 PM",
+            "6.00 PM - 8.00 PM",
+            "8.00 PM - 10.00 PM"
+        ]
+    },
+    {
+        "image": "https://i.ibb.co/2cYD22z/Group-1372.png",
+        "name": "Hair Color & Styleing",
+        "price": 99,
+        "description": "Adding a subtle color to your hair can create more varied hues that pick up and reflect light in different ways.",
+        "style": true,
+        "slots": [
+            "10.00 AM - 12.00 AM",
+            "12.00 AM - 2.00 AM",
+            "2.00 PM - 4.00 PM",
+            "4.00 PM - 6.00 PM",
+            "6.00 PM - 8.00 PM",
+            "8.00 PM - 10.00 PM"
+        ]
+    },
+    {
+        "image": "https://i.ibb.co/wYgpfVx/Group-1374.png",
+        "name": "Skin Care Treatment",
+        "price": 299,
+        "description": "Facial treatment is a soothing procedure by a professional esthetician who exfoliates, moisturizes, nourishes the skin.",
+        "slots": [
+            "10.00 AM - 12.00 AM",
+            "12.00 AM - 2.00 AM",
+            "2.00 PM - 4.00 PM",
+            "4.00 PM - 6.00 PM",
+            "6.00 PM - 8.00 PM",
+            "8.00 PM - 10.00 PM"
+        ]
+    }
+]
