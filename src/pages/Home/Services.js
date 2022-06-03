@@ -10,7 +10,7 @@ const Services = () => {
     const formatedDate = new Date();
     let today = formatedDate.toDateString();
 
-    const { data: services, isLoading,refetch } = useQuery(["available",today], () => fetch(`http://localhost:5000/available?date=${today}`)
+    const { data: services, isLoading,refetch } = useQuery(["available",today], () => fetch(`https://morning-brushlands-93158.herokuapp.com/available?date=${today}`)
         .then(res => res.json())
     );
 

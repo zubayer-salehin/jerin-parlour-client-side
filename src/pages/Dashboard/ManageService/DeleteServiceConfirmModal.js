@@ -6,7 +6,7 @@ const DeleteServiceConfirmModal = ({ serviceModal, setServiceModal, refetch }) =
     const { name, _id } = serviceModal
 
     const handleDelete = () => {
-        fetch(`http://localhost:5000/services/${_id}`, {
+        fetch(`https://morning-brushlands-93158.herokuapp.com/services/${_id}`, {
             method: 'DELETE',
             headers: {
                 "content-type": "application/json",

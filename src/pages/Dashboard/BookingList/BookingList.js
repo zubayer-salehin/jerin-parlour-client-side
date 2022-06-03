@@ -11,7 +11,7 @@ const BookingList = () => {
     const [user] = useAuthState(auth);
     const email = user?.email;
     const [bookingModal, setBookingModal] = useState(null);
-    const url = `http://localhost:5000/booking?email=${email}`
+    const url = `https://morning-brushlands-93158.herokuapp.com/booking?email=${email}`
     const { data: bookings, isLoading, refetch } = useQuery('booking', () => fetch(url, {
         method: "GET",
         headers: {

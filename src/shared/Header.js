@@ -4,16 +4,17 @@ import { signOut } from 'firebase/auth';
 import { Link } from 'react-router-dom';
 import logo from "../assets/Group 33092.png"
 import auth from '../firebase.init';
+import CustomLink from './CustomLink';
 
 const Header = () => {
 
     const [user] = useAuthState(auth);
 
     const menubar = <>
-        <li className='mr-4'><Link className='text-sm' to='/home'>Home</Link></li>
-        {user && <li className='mr-4'><Link className='text-sm' to='/dashboard'>Dashboard</Link></li>}
-        <li className='mr-4'><Link className='text-sm' to='/ourTeam'>Our Team</Link></li>
-        <li className='mr-4'><Link className='text-sm' to="/contactUs">Contact Us</Link></li>
+        <li className='mr-4 hover:disabled'><CustomLink className="text-sm font-medium" as={Link} to="/home">Home</CustomLink></li>
+        {user && <li className='mr-4 hover:disabled'><CustomLink className="text-sm font-medium" as={Link} to="/dashboard">Dashboard</CustomLink></li>}
+        <li className='mr-4 hover:disabled'><CustomLink className="text-sm font-medium" as={Link} to="/ourTeam">Our Team</CustomLink></li>
+        <li className='mr-4 hover:disabled'><CustomLink className='text-sm font-medium' as={Link} to="/myPortofolio">My Portofolio</CustomLink></li>
         {
             user ?
                 <button onClick={() => {

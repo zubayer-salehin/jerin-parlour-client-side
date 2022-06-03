@@ -8,7 +8,7 @@ import ManageUserRow from './ManageUserRow';
 const ManageUser = () => {
 
     const [userModal, setUserModal] = useState(null);
-    const url = `http://localhost:5000/users`
+    const url = `https://morning-brushlands-93158.herokuapp.com/users`
     const { data: users, isLoading, refetch } = useQuery('users', () => fetch(url, {
         method: 'GET',
         headers: {

@@ -11,7 +11,7 @@ const Testimonials = () => {
     const [reveiws, setReveiws] = useState([]);
 
     useEffect(() => {
-        fetch("http://localhost:5000/reveiws")
+        fetch("https://morning-brushlands-93158.herokuapp.com/reveiws")
             .then(res => res.json())
             .then(data => setReveiws(data))
     }, [])

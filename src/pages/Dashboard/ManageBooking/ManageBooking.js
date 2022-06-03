@@ -8,7 +8,7 @@ import ManageBookingRow from './ManageBookingRow';
 const ManageService = () => {
 
     const [manageBookingModal, setManageBookingModal] = useState(null);
-    const url = `http://localhost:5000/allBooking`
+    const url = `https://morning-brushlands-93158.herokuapp.com/allBooking`
     const { data: bookings, isLoading, refetch } = useQuery('allBooking', () => fetch(url, {
         method: 'GET',
         headers: {

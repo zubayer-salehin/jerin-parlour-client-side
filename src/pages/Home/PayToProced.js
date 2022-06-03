@@ -11,7 +11,7 @@ const PayToProced = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        fetch(`http://localhost:5000/booking/${id}`,{
+        fetch(`https://morning-brushlands-93158.herokuapp.com/booking/${id}`,{
             method: "GET",
             headers: {
                 "content-type": "application/json",

@@ -6,7 +6,7 @@ const DeleteBookingConfirmModal = ({ manageBookingModal, setManageBookingModal, 
     const { treatment, _id } = manageBookingModal
 
     const handleDelete = () => {
-        fetch(`http://localhost:5000/manageBooking/${_id}`, {
+        fetch(`https://morning-brushlands-93158.herokuapp.com/manageBooking/${_id}`, {
             method: 'DELETE',
             headers: {
                 "content-type": "application/json",

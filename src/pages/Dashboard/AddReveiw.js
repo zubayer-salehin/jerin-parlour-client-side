@@ -37,7 +37,7 @@ const AddReveiw = () => {
         const rating = e.target.rating.value;
         const newUser = { name, profession, description, image:userImage, rating };
 
-        fetch(`http://localhost:5000/reveiws?name=${name}`, {
+        fetch(`https://morning-brushlands-93158.herokuapp.com/reveiws?name=${name}`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

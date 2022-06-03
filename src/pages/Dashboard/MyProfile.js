@@ -20,7 +20,7 @@ const MyProfile = () => {
     }
 
     useEffect(() => {
-        fetch(`http://localhost:5000/user?email=${email}`, {
+        fetch(`https://morning-brushlands-93158.herokuapp.com/user?email=${email}`, {
             method: "GET",
             headers: {
                 "content-type": "application/json",
@@ -55,7 +55,7 @@ const MyProfile = () => {
         const description = e.target.description.value;
         const newUser = { name, address, email, profession, description, image: userPicture };
 
-        fetch(`http://localhost:5000/userUpdate?email=${email}`, {
+        fetch(`https://morning-brushlands-93158.herokuapp.com/userUpdate?email=${email}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',

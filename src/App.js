@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 import './App.css';
 import Dashboard from './pages/Dashboard/Dashboard';
 import MyProfile from './pages/Dashboard/MyProfile';
@@ -19,16 +19,18 @@ import ManageBooking from './pages/Dashboard/ManageBooking/ManageBooking';
 import ManageUser from './pages/Dashboard/ManageUser.js/ManageUser';
 import MakeAdmin from './pages/Dashboard/MakeAdmin';
 import RequireAdmin from './pages/Login/RequireAdmin';
+import MyPortofolio from './pages/MyPortofolio/MyPortofolio';
 
 function App() {
   return (
     <div className="App">
       <Header></Header>
       <Routes>
-        <Route path='/' element={<Home></Home>}></Route>
+        <Route path='/' element={<Navigate to="/home"></Navigate>}></Route>
         <Route path='/home' element={<Home></Home>}></Route>
         <Route path='/payToProced/:id' element={<PayToProced></PayToProced>}></Route>
         <Route path='/payment/:id' element={<Payment></Payment>}></Route>
+        <Route path='/myPortofolio' element={<MyPortofolio></MyPortofolio>}></Route>
         <Route path='dashboard' element={<RequireAuth><Dashboard></Dashboard></RequireAuth>}>
           <Route index element={<MyProfile></MyProfile>}></Route>
           <Route path='bookingList' element={<BookingList></BookingList>}></Route>

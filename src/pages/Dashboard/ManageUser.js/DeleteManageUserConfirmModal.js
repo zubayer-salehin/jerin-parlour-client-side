@@ -6,7 +6,7 @@ const DeleteManageUserConfirmModal = ({ userModal, setUserModal, refetch }) => {
     const { name, _id } = userModal
 
     const handleDelete = () => {
-        fetch(`http://localhost:5000/user/${_id}`, {
+        fetch(`https://morning-brushlands-93158.herokuapp.com/user/${_id}`, {
             method: 'DELETE',
             headers: {
                 "content-type": "application/json",

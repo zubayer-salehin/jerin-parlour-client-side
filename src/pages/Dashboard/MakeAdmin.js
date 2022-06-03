@@ -7,7 +7,7 @@ const MakeAdmin = () => {
         e.preventDefault();
         const email = e.target.email.value;
         if (email) {
-            fetch(`http://localhost:5000/user`, {
+            fetch(`https://morning-brushlands-93158.herokuapp.com/user`, {
                 method: "PATCH",
                 headers: {
                     'Content-Type': 'application/json',
