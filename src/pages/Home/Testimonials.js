@@ -1,20 +1,21 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Pagination, A11y } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import "./Testimonials.css"
+import Loading from '../../shared/Loading/Loading';
+import { useQuery } from 'react-query';
 
 
 const Testimonials = () => {
 
-    const [reveiws, setReveiws] = useState([]);
+    const { data: reveiws, isLoading } = useQuery(["reveiws"], () => fetch(`https://morning-brushlands-93158.herokuapp.com/reveiws`)
+    .then(res => res.json()));
 
-    useEffect(() => {
-        fetch("https://morning-brushlands-93158.herokuapp.com/reveiws")
-            .then(res => res.json())
-            .then(data => setReveiws(data))
-    }, [])
+    if (isLoading) {
+        return <Loading loadingStatus="true"></Loading>
+    }
 
     return (
         <div className='pb-16 sm:px-20'>
