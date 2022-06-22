@@ -61,11 +61,11 @@ const AddReveiw = () => {
     return (
         <div>
             <h2 className='pt-5 pb-3 text-2xl font-bold'>Add Reveiw</h2>
-            <div style={{ background: "#f4f7fc", height: "490px" }} className="pt-7">
+            <div style={{ background: "#f4f7fc" }} className="max-h-fit py-7">
                 <div className='ml-5 mr-10 bg-white p-5 rounded-2xl'>
                     <form onSubmit={handleAddReview}>
-                        <div className='flex md:flex-none'>
-                            <div className='grid grid-cols-1 gap-3 w-1/2'>
+                        <div className='sm:flex md:flex-none'>
+                            <div className='grid grid-cols-1 gap-3 sm:w-1/2'>
                                 <div className="form-control">
                                     <label className="label">
                                         <span className="label-text font-medium">Full Name</span>
@@ -85,8 +85,8 @@ const AddReveiw = () => {
                                     <textarea name='description' className="textarea textarea-bordered h-24" placeholder="Description" required></textarea>
                                 </div>
                             </div>
-                            <div className='pl-14'>
-                                <div className='mt-3'>
+                            <div className='sm:pl-14'>
+                                <div className='mt-5'>
                                     <p className='label-text font-medium mb-4'>Image</p>
                                     <label className='bg-pink-100 py-2 px-8 text-primary border font-medium border-primary rounded-md' htmlFor="filePicker">
                                         <FontAwesomeIcon icon={faCloudArrowUp}></FontAwesomeIcon>  Upload Photo
@@ -101,7 +101,7 @@ const AddReveiw = () => {
                                 </div>
                             </div>
                         </div>
-                        <input className='btn btn-primary px-16 mt-5 text-white' type="submit" value="Add Reveiw" />
+                        <input className='btn btn-primary w-full sm:w-60 mt-7 sm:mt-5 text-white' type="submit" value="Add Reveiw" />
                     </form>
                 </div>
             </div>

@@ -20,6 +20,7 @@ import ManageUser from './pages/Dashboard/ManageUser.js/ManageUser';
 import MakeAdmin from './pages/Dashboard/MakeAdmin';
 import RequireAdmin from './pages/Login/RequireAdmin';
 import MyPortofolio from './pages/MyPortofolio/MyPortofolio';
+import OurTeam from './pages/OurTeam/OurTeam';
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
         <Route path='/home' element={<Home></Home>}></Route>
         <Route path='/payToProced/:id' element={<PayToProced></PayToProced>}></Route>
         <Route path='/payment/:id' element={<Payment></Payment>}></Route>
+        <Route path='/ourTeam' element={<OurTeam></OurTeam>}></Route>
         <Route path='/myPortofolio' element={<MyPortofolio></MyPortofolio>}></Route>
         <Route path='dashboard' element={<RequireAuth><Dashboard></Dashboard></RequireAuth>}>
           <Route index element={<MyProfile></MyProfile>}></Route>

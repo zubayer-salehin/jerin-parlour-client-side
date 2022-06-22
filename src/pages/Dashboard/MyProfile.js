@@ -79,10 +79,10 @@ const MyProfile = () => {
     return (
         <div>
             <h2 className='pt-5 pb-3 text-2xl font-bold border-b-2'>My Profile</h2>
-            <form onSubmit={handleUpdateUser} className='flex pt-10 pb-10 px-16'>
-                <div className='w-3/12'>
-                    <div className="avatar ml-3 mb-10">
-                        <div className="w-36 rounded-full">
+            <form onSubmit={handleUpdateUser} className='sm:flex py-10 px-8 sm:px-16'>
+                <div className='sm:w-3/12 pb-5 sm:pb-0 text-center sm:text-left'>
+                    <div className="avatar sm:ml-3 mb-10">
+                        <div className="sm:w-36 rounded-full">
                             <img src={userInfo?.image} alt='' />
                         </div>
                     </div>
@@ -93,7 +93,7 @@ const MyProfile = () => {
                         <input type="file" onChange={handleFileSelected} id="filePicker" name='file' style={{ visibility: "hidden" }} />
                     </div>
                 </div>
-                <div className='w-9/12'>
+                <div className='sm:w-9/12'>
                     <div className='grid grid-cols-1 gap-3'>
                         <div className="form-control">
                             <label className="label">

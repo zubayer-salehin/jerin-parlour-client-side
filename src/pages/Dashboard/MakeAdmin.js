@@ -31,9 +31,9 @@ const MakeAdmin = () => {
     return (
         <div>
             <h2 className='pt-5 pb-3 text-2xl font-bold'>Make Admin</h2>
-            <div style={{ backgroundColor: "#f4f7fc" }} className="h-32 pt-10 pl-10 rounded-xl">
+            <div style={{ backgroundColor: "#f4f7fc" }} className="max-h-fit py-8 pl-5 sm:pl-10 rounded-xl">
                 <form onSubmit={handleMakeAdmin}>
-                    <input type="email" name='email' placeholder="Email Address" className="input input-bordered w-full max-w-xs mr-3" required />
+                    <input type="email" name='email' placeholder="Email Address" className="input input-bordered w-full max-w-xs sm:mr-3 mb-4 sm:mb-0" required />
                     <input className='btn btn-primary text-white' type="submit" value="Make Admin" />
                 </form>
             </div>

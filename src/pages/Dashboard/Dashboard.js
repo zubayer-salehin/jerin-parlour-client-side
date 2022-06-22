@@ -20,7 +20,7 @@ const Dashboard = () => {
             </div>
             <div className="drawer-side">
                 <label htmlFor="dashboard-open" className="drawer-overlay"></label>
-                <ul className="menu p-4 overflow-y-auto w-60 border-r-2 sm:bg-transparent">
+                <ul className="menu p-4 overflow-y-auto w-60 border-r-2 bg-white sm:bg-transparent">
                     <li className='font-bold border-b-2 border-primary'><div><FontAwesomeIcon className='text-primary' icon={faHouseChimney}></FontAwesomeIcon> Dashboard</div></li>
                     <li className='border-b-2'><Link className='font-medium' to="/dashboard"> <FontAwesomeIcon className='text-primary' icon={faUserCheck}></FontAwesomeIcon> My Profile</Link></li>
                     {!admin ?
