@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { Link, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import google from "../../assets/Icon/Group 573.png"
 import auth from '../../firebase.init';
 import useToken from '../../Hooks/useToken';
@@ -39,6 +40,15 @@ const Login = () => {
         signInWithEmailAndPassword(email, password);
     }
 
+    const handleResetPassword = async() => {
+        if (email) {
+            await sendPasswordResetEmail(email);
+            toast.success("Email Sent");
+        }else{
+            toast.warning("Please Enter Your Email");
+        }
+    }
+
     return (
         <div className="hero">
             <div className="hero-content flex-col lg:flex-row-reverse sm:w-8/12 sm:mt-8">
@@ -61,10 +71,7 @@ const Login = () => {
                                 </label>
                                 <input type="password" name='password' placeholder="password" className="input input-bordered" />
                                 <label className="label">
-                                    <p onClick={async () => {
-                                        await sendPasswordResetEmail(email);
-                                        alert('Sent email');
-                                    }} href="#" className="label-text-alt link link-hover text-blue-500 mt-1">Forgot password?</p>
+                                    <p onClick={handleResetPassword} href="#" className="label-text-alt link link-hover text-blue-500 mt-1">Forgot password?</p>
                                 </label>
                             </div>
                             {errorElement}
