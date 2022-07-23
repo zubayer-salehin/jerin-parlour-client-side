@@ -2,8 +2,8 @@ import React from 'react';
 
 const OurTeam = () => {
     return (
-        <div className='text-center text-3xl font-bold  my-14'>
-            Coming Soon...
+        <div>
+           <h2 className='text-2xl md:text-3xl py-16 text-center font-medium'>Coming Soon...</h2>
         </div>
     );
 };

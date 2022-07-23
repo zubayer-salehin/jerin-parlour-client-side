@@ -1,5 +1,5 @@
 import React from 'react';
-import { Pagination, A11y } from 'swiper';
+import { Pagination, A11y, Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -11,7 +11,7 @@ import { useQuery } from 'react-query';
 const Testimonials = () => {
 
     const { data: reveiws, isLoading } = useQuery(["reveiws"], () => fetch(`https://morning-brushlands-93158.herokuapp.com/reveiws`)
-    .then(res => res.json()));
+        .then(res => res.json()));
 
     if (isLoading) {
         return <Loading loadingStatus="true"></Loading>
@@ -21,7 +21,11 @@ const Testimonials = () => {
         <div className='pb-16 sm:px-20'>
             <h2 className='text-4xl font-bold text-secondary text-center pt-16 sm:pt-20 pb-6 sm:pb-10'>Testimonials</h2>
             <Swiper
-                modules={[Pagination, A11y]}
+                modules={[Pagination, A11y, Autoplay]}
+                autoplay={{
+                    delay: 2500,
+                    disableOnInteraction: false,
+                }}
                 spaceBetween={10}
                 breakpoints={{
                     // when window width is >= 640px
