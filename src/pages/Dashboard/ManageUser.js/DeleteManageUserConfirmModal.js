@@ -3,14 +3,14 @@ import { toast } from 'react-toastify';
 
 const DeleteManageUserConfirmModal = ({ userModal, setUserModal, refetch }) => {
 
-    const { name, _id } = userModal
+    const { name, _id, uid } = userModal
 
     const handleDelete = () => {
-        fetch(`https://morning-brushlands-93158.herokuapp.com/user/${_id}`, {
+        fetch(`https://morning-brushlands-93158.herokuapp.com/user?id=${_id}&&uid=${uid}`, {
             method: 'DELETE',
             headers: {
                 "content-type": "application/json",
-                "authorization":`Bearer ${localStorage.getItem("accessToken")}`
+                "authorization": `Bearer ${localStorage.getItem("accessToken")}`
             }
         })
             .then(res => res.json())

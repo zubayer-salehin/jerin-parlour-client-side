@@ -8,7 +8,8 @@ const useToken = (user) => {
 
         const name = user?.user?.displayName;
         const email = user?._tokenResponse?.email;
-        const currentUser = { name: name, email: email };
+        const uid = user?.user?.uid;
+        const currentUser = { name: name, email: email, uid: uid };
 
         if (email) {
             fetch(`https://morning-brushlands-93158.herokuapp.com/user/${email}`, {

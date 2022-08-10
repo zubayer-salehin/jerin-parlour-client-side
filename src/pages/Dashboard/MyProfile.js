@@ -8,6 +8,7 @@ const MyProfile = () => {
 
     const [user] = useAuthState(auth);
     const email = user?.email;
+    const name = user?.displayName;
     const [userInfo, setUserInfo] = useState({});
     const [userUpdateStatus, setUserUpdateStatus] = useState(0);
     const imageStorageKey = "bbb41293b29baeed6436287ccb9bbf00"
@@ -31,6 +32,27 @@ const MyProfile = () => {
             .then(data => setUserInfo(data))
     }, [email, userUpdateStatus])
 
+
+    useEffect(() => {
+        if (!userInfo?.name) {
+            fetch(`https://morning-brushlands-93158.herokuapp.com/userUpdate?email=${email}`, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json',
+                    "authorization": `Bearer ${localStorage.getItem("accessToken")}`
+                },
+                body: JSON.stringify({ name: name })
+            })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.success) {
+                        setUserUpdateStatus(userUpdateStatus + 1);
+                    }
+                })
+        }
+    }, [name, email, userUpdateStatus, userInfo])
+
+
     const handleUpdateUser = async (e) => {
         e.preventDefault();
         const image = file[0];
@@ -44,7 +66,7 @@ const MyProfile = () => {
         })
             .then(res => res.json())
             .then(result => {
-                if(result.success) {
+                if (result.success) {
                     userPicture = result.data.url;
                 }
             })
