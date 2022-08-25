@@ -22,6 +22,7 @@ import RequireAdmin from './pages/Login/RequireAdmin';
 import MyPortofolio from './pages/MyPortofolio/MyPortofolio';
 import OurTeam from './pages/OurTeam/OurTeam';
 import ServiceBooking from './pages/ServiceBooking/ServiceBooking';
+import NotFound from './shared/NotFound/NotFound';
 
 function App() {
   return (
@@ -47,6 +48,7 @@ function App() {
         </Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/singUp' element={<SingUp></SingUp>}></Route>
+        <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
       <ToastContainer></ToastContainer>
     </div>
