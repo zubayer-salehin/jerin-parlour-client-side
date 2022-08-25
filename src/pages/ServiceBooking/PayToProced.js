@@ -3,28 +3,35 @@ import { faEnvelopeCircleCheck, faLocationDot, faSackDollar, faShoppingCart, faS
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
+import Loading from '../../shared/Loading/Loading';
 
 const PayToProced = () => {
 
+    const [loading, setLoading] = useState(true);
     const { id } = useParams();
     const [booking, setBooking] = useState();
     const navigate = useNavigate();
 
     useEffect(() => {
-        fetch(`https://morning-brushlands-93158.herokuapp.com/booking/${id}`,{
+        setLoading(true);
+        fetch(`https://morning-brushlands-93158.herokuapp.com/booking/${id}`, {
             method: "GET",
             headers: {
                 "content-type": "application/json",
-                "authorization":`Bearer ${localStorage.getItem("accessToken")}`
+                "authorization": `Bearer ${localStorage.getItem("accessToken")}`
             }
         })
             .then(res => res.json())
-            .then(data => setBooking(data))
+            .then(data => {
+                setBooking(data)
+                console.log(data);
+                setLoading(false);
+            })
     }, [id])
 
-    return (
+    return (loading ? <Loading loadingStatus="true"></Loading> :
         <div className='flex justify-center'>
-            <div className='w-3/12 pt-5'>
+            <div className='w-3/12 pt-5 2xl:pt-14'>
                 <div className='px-14 py-10 shadow-2xl'>
                     <h2 className='text-2xl text-secondary font-bold'>Booking Summary</h2>
                     <div className='grid grid-cols-1 gap-3'>
@@ -48,6 +55,7 @@ const PayToProced = () => {
                 </div>
             </div>
         </div>
+
     );
 };
 

@@ -71,7 +71,7 @@ const AddService = () => {
     return (
         <div>
             <h2 className='pt-5 pb-3 text-2xl font-bold'>Add Service</h2>
-            <div style={{ background: "#f4f7fc"}} className="max-h-fit py-7">
+            <div style={{ background: "#f4f7fc" }} className="max-h-fit py-7">
                 <div className='ml-5 mr-10 bg-white p-5 rounded-2xl'>
                     <form onSubmit={handleServiceAdd}>
                         <div className='sm:flex md:flex-none'>
@@ -104,7 +104,7 @@ const AddService = () => {
                                     <input type="file" onChange={handleFileSelected} id="filePicker" name='file' style={{ visibility: "hidden" }} required />
                                 </div>
                                 <div className="form-control">
-                                    <label className="label pt-1">
+                                    <label className="label pt-1 2xl:pt-5">
                                         <span className="label-text font-medium">Select Slots</span>
                                     </label>
                                     <div className="form-control">
@@ -137,7 +137,9 @@ const AddService = () => {
                                 </div>
                             </div>
                         </div>
-                        <input className='btn btn-primary w-full sm:px-16 mt-10 sm:mt-5 text-white' type="submit" value="Add Service" />
+                        <div className='text-center'>
+                            <input className='btn btn-primary w-full sm:w-1/2 sm:px-16 mt-10 sm:mt-5 text-white 2xl:py-8 2xl:pb-10' type="submit" value="Add Service" />
+                        </div>
                     </form>
                 </div>
             </div>

@@ -1,0 +1,31 @@
+.inputFontSize {
+    font-size: 16px;
+}
+
+.inputDegine {
+    width: 100%;
+    border-radius: 0px;
+    border: 1px solid rgb(226 232 240);
+    font-size: 16px;
+}
+
+.inputDegine:focus {
+    outline: none;
+    border: 1px solid #F63E7B;
+}
+
+.formInputFontSize {
+    font-size: 16px;
+}
+
+.formInputDegine {
+    width: 100%;
+    border-radius: 4px;
+    border: 1px solid rgb(226 232 240);
+    font-size: 16px;
+}
+
+.formInputDegine:focus {
+    outline: none;
+    border: 1px solid #F63E7B;
+}

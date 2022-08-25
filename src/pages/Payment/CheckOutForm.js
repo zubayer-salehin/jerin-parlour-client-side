@@ -8,7 +8,7 @@ const CheckOutForm = ({ order }) => {
     const elements = useElements();
     const [cardError, setCardError] = useState("");
     const [success, setSuccess] = useState("");
-    const { _id,price,clientName,clientEmail } = order;
+    const { _id, price, clientName, clientEmail } = order;
     const [transactionId, setTransactionId] = useState("");
 
 
@@ -17,7 +17,7 @@ const CheckOutForm = ({ order }) => {
             method: 'POST',
             headers: {
                 "content-type": "application/json",
-                "authorization":`Bearer ${localStorage.getItem("accessToken")}`
+                "authorization": `Bearer ${localStorage.getItem("accessToken")}`
             },
             body: JSON.stringify({ price })
         })
@@ -42,7 +42,7 @@ const CheckOutForm = ({ order }) => {
             return;
         }
 
-        const { error, paymentMethod } = await stripe.createPaymentMethod({
+        const { error } = await stripe.createPaymentMethod({
             type: 'card',
             card,
         });
@@ -82,7 +82,7 @@ const CheckOutForm = ({ order }) => {
                 method: "PUT",
                 headers: {
                     "content-type": "application/json",
-                    "authorization":`Bearer ${localStorage.getItem("accessToken")}`
+                    "authorization": `Bearer ${localStorage.getItem("accessToken")}`
                 },
                 body: JSON.stringify(payment)
             })

@@ -6,7 +6,7 @@ import google from "../../assets/Icon/Group 573.png"
 import auth from '../../firebase.init';
 import useToken from '../../Hooks/useToken';
 import Loading from '../../shared/Loading/Loading';
-
+import "../ServiceBooking/ServiceBooking.css"
 
 const Login = () => {
 
@@ -63,13 +63,13 @@ const Login = () => {
                                 <label className="label">
                                     <span className="label-text">Email</span>
                                 </label>
-                                <input onBlur={(e) => setEmail(e.target.value)} type="email" name='email' placeholder="email" className="input input-bordered" />
+                                <input onBlur={(e) => setEmail(e.target.value)} type="email" name='email' placeholder="email" className="input input-bordered formInputDegine formInputFontSize" />
                             </div>
                             <div className="form-control mt-2">
                                 <label className="label">
                                     <span className="label-text">Password</span>
                                 </label>
-                                <input type="password" name='password' placeholder="password" className="input input-bordered" />
+                                <input type="password" name='password' placeholder="password" className="input input-bordered formInputDegine formInputFontSize" />
                                 <label className="label">
                                     <p onClick={handleResetPassword} href="#" className="label-text-alt link link-hover text-blue-500 mt-1">Forgot password?</p>
                                 </label>

@@ -5,10 +5,13 @@ import auth from "../../firebase.init"
 import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
 import Loading from '../../shared/Loading/Loading';
 import useToken from '../../Hooks/useToken';
+import { useState } from 'react';
 
 
 const SingUp = () => {
 
+    const [userName, setUserName] = useState("");
+    const [userEmail, setUserEmail] = useState("");
     const navigate = useNavigate();
     const [createUserWithEmailAndPassword, user, loading, error,] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
     const [updateProfile] = useUpdateProfile(auth);
@@ -19,8 +22,24 @@ const SingUp = () => {
     useEffect(() => {
         if (token) {
             navigate("/home");
+            if (userName) {
+                fetch(`https://morning-brushlands-93158.herokuapp.com/userUpdate?email=${userEmail}`, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        "authorization": `Bearer ${localStorage.getItem("accessToken")}`
+                    },
+                    body: JSON.stringify({ name: userName })
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data.success) {
+
+                        }
+                    })
+            }
         }
-    }, [token,navigate])
+    }, [token, navigate, userName, userEmail])
 
     if (loading || gloading) {
         return <Loading loadingStatus="true"></Loading>
@@ -33,7 +52,9 @@ const SingUp = () => {
     const handleRegister = async (e) => {
         e.preventDefault();
         const name = e.target.name.value;
+        setUserName(name);
         const email = e.target.email.value;
+        setUserEmail(email);
         const password = e.target.password.value;
         await createUserWithEmailAndPassword(email, password);
         await updateProfile({ displayName: name });
@@ -53,19 +74,19 @@ const SingUp = () => {
                                 <label className="label">
                                     <span className="label-text">Full Name</span>
                                 </label>
-                                <input type="text" name='name' placeholder="Name" className="input input-bordered" required />
+                                <input type="text" name='name' placeholder="Name" className="input input-bordered formInputDegine formInputFontSize" required />
                             </div>
                             <div className="form-control mt-2">
                                 <label className="label">
                                     <span className="label-text">Email</span>
                                 </label>
-                                <input type="email" name='email' placeholder="email" className="input input-bordered" required />
+                                <input type="email" name='email' placeholder="email" className="input input-bordered formInputDegine formInputFontSize" required />
                             </div>
                             <div className="form-control mt-2">
                                 <label className="label">
                                     <span className="label-text">Password</span>
                                 </label>
-                                <input type="password" name='password' placeholder="password" className="input input-bordered" required />
+                                <input type="password" name='password' placeholder="password" className="input input-bordered formInputDegine formInputFontSize" required />
                             </div>
                             {errorElement}
                             <div className="form-control mt-6">

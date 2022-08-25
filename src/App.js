@@ -1,5 +1,7 @@
-import { Navigate, Route, Routes } from 'react-router-dom';
 import './App.css';
+import 'react-toastify/dist/ReactToastify.css';
+import { Navigate, Route, Routes } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
 import Dashboard from './pages/Dashboard/Dashboard';
 import MyProfile from './pages/Dashboard/MyProfile';
 import Home from './pages/Home/Home';
@@ -7,9 +9,7 @@ import Login from './pages/Login/Login';
 import RequireAuth from './pages/Login/RequireAuth';
 import SingUp from './pages/Login/SingUp';
 import Header from './shared/Header';
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import PayToProced from './pages/Home/PayToProced';
+import PayToProced from './pages/ServiceBooking/PayToProced';
 import Payment from './pages/Payment/Payment';
 import BookingList from './pages/Dashboard/BookingList/BookingList';
 import AddReveiw from './pages/Dashboard/AddReveiw';
@@ -21,16 +21,18 @@ import MakeAdmin from './pages/Dashboard/MakeAdmin';
 import RequireAdmin from './pages/Login/RequireAdmin';
 import MyPortofolio from './pages/MyPortofolio/MyPortofolio';
 import OurTeam from './pages/OurTeam/OurTeam';
+import ServiceBooking from './pages/ServiceBooking/ServiceBooking';
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <Header></Header>
       <Routes>
         <Route path='/' element={<Navigate to="/home"></Navigate>}></Route>
         <Route path='/home' element={<Home></Home>}></Route>
-        <Route path='/payToProced/:id' element={<PayToProced></PayToProced>}></Route>
-        <Route path='/payment/:id' element={<Payment></Payment>}></Route>
+        <Route path='/serviceBooking/:id' element={<RequireAuth><ServiceBooking /></RequireAuth>}></Route>
+        <Route path='/payToProced/:id' element={<RequireAuth><PayToProced /></RequireAuth>}></Route>
+        <Route path='/payment/:id' element={<RequireAuth><Payment /></RequireAuth>}></Route>
         <Route path='/ourTeam' element={<OurTeam></OurTeam>}></Route>
         <Route path='/myPortofolio' element={<MyPortofolio></MyPortofolio>}></Route>
         <Route path='dashboard' element={<RequireAuth><Dashboard></Dashboard></RequireAuth>}>

@@ -10,14 +10,14 @@ const Payment = () => {
 
     const stripePromise = loadStripe('pk_test_51L1LdlFkK6QGOuLXCBCooyA8PvCjeda2eY9cY8BEL5I6fsuz7kvLbqBeNtu65yeVR7stE1GR3xxZrrTf3qrw5qGJ00xmWY3tm7');
 
-    const {id} = useParams();
+    const { id } = useParams();
     const url = `https://morning-brushlands-93158.herokuapp.com/orders/${id}`;
 
-    const { data: order, isLoading } = useQuery(['orders', id], () => fetch(url,{
+    const { data: order, isLoading } = useQuery(['orders', id], () => fetch(url, {
         method: "GET",
         headers: {
             "content-type": "application/json",
-            "authorization":`Bearer ${localStorage.getItem("accessToken")}`
+            "authorization": `Bearer ${localStorage.getItem("accessToken")}`
         }
     }).then(res => res.json()));
 
@@ -26,7 +26,7 @@ const Payment = () => {
     }
 
     return (
-        <>
+        <div className='2xl:max-w-7xl mx-auto 2xl:mt-14'>
             <div className="card w-50 max-w-md bg-base-100 shadow-xl ml-10 mt-5 mb-5">
                 <div className="card-body">
                     <p className="text-success font-bold">Hello, {order?.clientName}</p>
@@ -41,7 +41,7 @@ const Payment = () => {
                     </Elements>
                 </div>
             </div>
-        </>
+        </div>
     );
 };
 
