@@ -53,7 +53,6 @@ const AddReveiw = () => {
                 } else {
                     toast.error(`Reveiw is already given.please try an other one`);
                 }
-                console.log(data);
             })
     }
 

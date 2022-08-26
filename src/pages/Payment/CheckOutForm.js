@@ -70,7 +70,6 @@ const CheckOutForm = ({ order }) => {
         } else {
             setCardError("");
             setTransactionId(paymentIntent.id);
-            console.log(paymentIntent);
             setSuccess("Congrats! Your payment is completed");
 
             // Store Payment on database

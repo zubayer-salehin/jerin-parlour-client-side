@@ -104,24 +104,24 @@ const ServiceBooking = () => {
 
     return (loading ? <Loading loadingStatus="true"></Loading> :
         <div className='flex justify-center'>
-            <div className='w-5/12 2xl:w-4/12 2xl:pt-10'>
-                <div className='px-14 py-10 shadow-2xl'>
+            <div className='w-11/12 sm:w-5/12 2xl:w-4/12 2xl:pt-10'>
+                <div className='px-5 sm:px-14 py-4 sm:py-10 shadow-2xl'>
                     <h2 style={{ wordSpacing: "3px" }} className='text-2xl text-secondary font-bold'>Booking For <span className='text-primary'>{service?.name}</span></h2>
                     <form onSubmit={handleServiceBookingFormSubmit}>
                         <div className='grid grid-cols-1 gap-2.5 mt-5'>
                             <div className="form-control grid grid-cols-12 items-center">
                                 <p className='col-span-4 inputFontSize font-semibold'
-                                >Name <span className='font-bold ml-2'>:</span></p>
+                                >Name <span className='font-bold sm:ml-2'>:</span></p>
                                 <input type="text" name='name' value={user?.displayName} placeholder="" className="input input-bordered col-span-8 inputDegine" required disabled />
                             </div>
                             <div className="form-control grid grid-cols-12 items-center">
                                 <p className='col-span-4 inputFontSize font-semibold'
-                                >Email <span className='font-bold ml-2'>:</span></p>
+                                >Email <span className='font-bold sm:ml-2'>:</span></p>
                                 <input type="email" name='email' value={user?.email} placeholder="" className="input input-bordered col-span-8 inputDegine" required disabled />
                             </div>
                             <div className="form-control grid grid-cols-12 items-center">
                                 <p className='col-span-4 inputFontSize font-semibold'
-                                >Select Date <span className='font-bold ml-2'>:</span></p>
+                                >Select Date <span className='font-bold sm:ml-2'>:</span></p>
                                 <select name='date' onChange={(e) => setSelectDate(e.target.value)} className="select inputDegine inputFontSize font-normal col-span-8">
                                     <option value={day1}>{day1}</option>
                                     <option value={day2}>{day2}</option>
@@ -134,19 +134,19 @@ const ServiceBooking = () => {
                             </div>
                             <div className="form-control grid grid-cols-12 items-center">
                                 <p className='col-span-4 inputFontSize font-semibold'
-                                >Select Time <span className='font-bold ml-2'>:</span></p>
+                                >Select Time <span className='font-bold sm:ml-2'>:</span></p>
                                 <select name='slot' className="select inputDegine inputFontSize font-normal col-span-8" >
                                     {singleService?.slots?.map(time => <option key={Math.random() * 1000} value={time}>{time}</option>)}
                                 </select>
                             </div>
                             <div className="form-control grid grid-cols-12 items-center">
                                 <p className='col-span-4 inputFontSize font-semibold'
-                                >Address <span className='font-bold ml-2'>:</span></p>
+                                >Address <span className='font-bold sm:ml-2'>:</span></p>
                                 <input type="text" name='address' placeholder="Address" className="input input-bordered col-span-8 inputDegine" required />
                             </div>
                             <div className="form-control grid grid-cols-12 items-center">
                                 <p className='col-span-4 inputFontSize font-semibold'
-                                >Phone Number <span className='font-bold ml-2'>:</span></p>
+                                >Phone Number <span className='font-bold sm:ml-2'>:</span></p>
                                 <input type="text" name='phoneNumber' placeholder="Phone Number" className="input input-bordered col-span-8 inputDegine" required />
                             </div>
                             <input type="submit" className='btn btn-primary text-white mt-3 capitalize' value="Booking Confirm" />
