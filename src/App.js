@@ -23,9 +23,22 @@ import MyPortofolio from './pages/MyPortofolio/MyPortofolio';
 import OurTeam from './pages/OurTeam/OurTeam';
 import ServiceBooking from './pages/ServiceBooking/ServiceBooking';
 import NotFound from './shared/NotFound/NotFound';
+import { useEffect } from 'react';
+import { useState } from 'react';
+import Loading from './shared/Loading/Loading';
 
 function App() {
-  return (
+
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, [2000])
+  }, [])
+
+  return (loading ? <Loading loadingStatus="true"></Loading> :
     <div>
       <Header></Header>
       <Routes>
