@@ -9,7 +9,7 @@ const NotFound = () => {
     return (
         <div>
             <div className="center">
-                <div className="error mt-8">
+                <div className="error mt-24 sm:mt-10">
                     <div className="number">4</div>
                     <div className="illustration">
                         <div className="circle"></div>
