@@ -1,5 +1,5 @@
 import React from 'react';
-import picture from "../../assets/Image/engin-akyurt-g-m8EDc4X6Q-unsplash 1.png"
+import picture from "../../assets/Image/engin-akyurt-g-m8EDc4X6Q-unsplash 1.jpg"
 
 const Summary = () => {
     return (
