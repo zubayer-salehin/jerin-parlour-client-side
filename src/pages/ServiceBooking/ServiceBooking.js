@@ -104,7 +104,7 @@ const ServiceBooking = () => {
 
     return (loading ? <Loading loadingStatus="true"></Loading> :
         <div className='flex justify-center'>
-            <div className='w-11/12 sm:w-5/12 2xl:w-4/12 2xl:pt-10'>
+            <div className='w-11/12 sm:max-w-fit 2xl:pt-10'>
                 <div className='px-5 sm:px-14 py-4 sm:py-10 shadow-2xl'>
                     <h2 style={{ wordSpacing: "3px" }} className='text-2xl text-secondary font-bold'>Booking For <span className='text-primary'>{service?.name}</span></h2>
                     <form onSubmit={handleServiceBookingFormSubmit}>
@@ -146,7 +146,7 @@ const ServiceBooking = () => {
                             </div>
                             <div className="form-control grid grid-cols-12 items-center">
                                 <p className='col-span-4 inputFontSize font-semibold'
-                                >Phone Number <span className='font-bold sm:ml-2'>:</span></p>
+                                >Phone Number <span className='font-bold sm:ml-2 sm:mr-4'>:</span></p>
                                 <input type="text" name='phoneNumber' placeholder="Phone Number" className="input input-bordered col-span-8 inputDegine" required />
                             </div>
                             <input type="submit" className='btn btn-primary text-white mt-3 capitalize' value="Booking Confirm" />

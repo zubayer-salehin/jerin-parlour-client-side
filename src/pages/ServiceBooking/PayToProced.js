@@ -30,8 +30,8 @@ const PayToProced = () => {
 
     return (loading ? <Loading loadingStatus="true"></Loading> :
         <div className='flex justify-center'>
-            <div className='w-10/12 sm:w-3/12 pt-5 2xl:pt-14'>
-                <div className='px-14 py-10 shadow-2xl'>
+            <div className='max-w-fit pt-5 2xl:pt-14'>
+                <div className='px-10 sm:px-14 py-8 sm:py-10 shadow-2xl'>
                     <h2 className='text-2xl text-secondary font-bold'>Booking Summary</h2>
                     <div className='grid grid-cols-1 gap-3'>
                         <p className='mt-5'> <FontAwesomeIcon className='mr-2 text-primary' icon={faUser}></FontAwesomeIcon> {booking?.clientName}</p>
