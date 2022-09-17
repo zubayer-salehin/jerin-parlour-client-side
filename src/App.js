@@ -19,13 +19,14 @@ import ManageBooking from './pages/Dashboard/ManageBooking/ManageBooking';
 import ManageUser from './pages/Dashboard/ManageUser.js/ManageUser';
 import MakeAdmin from './pages/Dashboard/MakeAdmin';
 import RequireAdmin from './pages/Login/RequireAdmin';
-import MyPortofolio from './pages/MyPortofolio/MyPortofolio';
-import OurTeam from './pages/OurTeam/OurTeam';
 import ServiceBooking from './pages/ServiceBooking/ServiceBooking';
 import NotFound from './shared/NotFound/NotFound';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import Loading from './shared/Loading/Loading';
+import ScrollToTop from './ScrollToTop';
+
+
 
 function App() {
 
@@ -40,6 +41,7 @@ function App() {
 
   return (loading ? <Loading loadingStatus="true"></Loading> :
     <div>
+      <ScrollToTop></ScrollToTop>
       <Header></Header>
       <Routes>
         <Route path='/' element={<Navigate to="/home"></Navigate>}></Route>
@@ -47,8 +49,6 @@ function App() {
         <Route path='/serviceBooking/:id' element={<RequireAuth><ServiceBooking /></RequireAuth>}></Route>
         <Route path='/payToProced/:id' element={<RequireAuth><PayToProced /></RequireAuth>}></Route>
         <Route path='/payment/:id' element={<RequireAuth><Payment /></RequireAuth>}></Route>
-        <Route path='/ourTeam' element={<OurTeam></OurTeam>}></Route>
-        <Route path='/myPortofolio' element={<MyPortofolio></MyPortofolio>}></Route>
         <Route path='dashboard' element={<RequireAuth><Dashboard></Dashboard></RequireAuth>}>
           <Route index element={<MyProfile></MyProfile>}></Route>
           <Route path='bookingList' element={<BookingList></BookingList>}></Route>

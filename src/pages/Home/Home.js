@@ -1,33 +1,30 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Footer from '../../shared/Footer';
-import Loading from '../../shared/Loading/Loading';
 import Banner from './Banner';
 import Contact from './Contact';
 import Services from './Services';
-import Summary from './Summary';
+import ChooseUs from './ChooseUs';
 import Testimonials from './Testimonials';
+import ParlourDescription from './ParlourDescription';
+import Portfolio from './Portfolio';
+import Team from './Team';
+import NewsLetter from './NewsLetter';
 
 const Home = () => {
 
-    const [loading, setLoading] = useState(true);
-
-    useEffect(() => {
-        setLoading(true);
-        setTimeout(() => {
-            setLoading(false);
-        }, [500])
-    }, [])
-
-    return (loading ? <Loading loadingStatus="true"></Loading> :
+    return (
         <div>
             <Banner></Banner>
             <Services></Services>
-            <Summary></Summary>
+            <ChooseUs></ChooseUs>
+            <ParlourDescription></ParlourDescription>
+            <Portfolio></Portfolio>
+            <Team></Team>
             <Testimonials></Testimonials>
             <Contact></Contact>
+            <NewsLetter></NewsLetter>
             <Footer></Footer>
         </div>
-
     );
 };
 
