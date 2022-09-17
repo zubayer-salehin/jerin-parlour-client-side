@@ -1,5 +1,6 @@
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 import React, { useEffect, useState } from 'react';
+import Swal from 'sweetalert2';
 
 const CheckOutForm = ({ order }) => {
 
@@ -85,6 +86,14 @@ const CheckOutForm = ({ order }) => {
                 },
                 body: JSON.stringify(payment)
             })
+                .then(res => res.json())
+                .then(data => {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Payment Success',
+                        text: `TransactionId : ${paymentIntent.id}`
+                    })
+                })
         }
     }
 

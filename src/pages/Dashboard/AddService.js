@@ -1,7 +1,7 @@
 import { faCloudArrowUp } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useState } from 'react';
-import { toast } from 'react-toastify';
+import Swal from 'sweetalert2';
 
 const AddService = () => {
 
@@ -59,10 +59,19 @@ const AddService = () => {
             .then(res => res.json())
             .then(data => {
                 if (data.success) {
-                    toast.success(`${name} service was successfully Added`)
+                    Swal.fire({
+                        icon: 'success',
+                        title: "Successfull",
+                        text: `${name} service was successfully Added`,
+                        timer: 4000
+                    })
                     e.target.reset();
                 } else {
-                    toast.error(`${name} service already exists`);
+                    Swal.fire({
+                        icon: 'error',
+                        title: "Opps!",
+                        text: `${name} service already exists`
+                    })
                 }
             })
 

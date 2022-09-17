@@ -1,43 +1,62 @@
-import React from 'react';
-import { toast } from 'react-toastify';
+import Swal from 'sweetalert2';
+
 
 const DeleteServiceConfirmModal = ({ serviceModal, setServiceModal, refetch }) => {
 
     const { name, _id } = serviceModal
 
-    const handleDelete = () => {
-        fetch(`https://morning-brushlands-93158.herokuapp.com/services/${_id}`, {
-            method: 'DELETE',
-            headers: {
-                "content-type": "application/json",
-                "authorization": `Bearer ${localStorage.getItem("accessToken")}`
-            }
-        })
-            .then(res => res.json())
-            .then(data => {
-                if (data.deletedCount) {
-                    toast.success(`${name} service is deleted.`)
-                    setServiceModal(null);
-                    refetch();
+    const swalWithBootstrapButtons = Swal.mixin({
+        customClass: {
+            confirmButton: 'btn btn-success',
+            cancelButton: 'btn btn-danger'
+        },
+        buttonsStyling: false
+    })
+
+    swalWithBootstrapButtons.fire({
+        title: 'Are you sure?',
+        text: `${name} Service won't be able to revert this!`,
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Yes, delete it!',
+        cancelButtonText: 'No, cancel!',
+        reverseButtons: true
+    }).then((result) => {
+        if (result.isConfirmed) {
+
+            fetch(`https://morning-brushlands-93158.herokuapp.com/services/${_id}`, {
+                method: 'DELETE',
+                headers: {
+                    "content-type": "application/json",
+                    "authorization": `Bearer ${localStorage.getItem("accessToken")}`
                 }
             })
-    }
+                .then(res => res.json())
+                .then(data => {
+                    if (data.deletedCount) {
+                        swalWithBootstrapButtons.fire(
+                            'Deleted!',
+                            `${name} Service is deleted.`,
+                            'success'
+                        )
+                        setServiceModal(null);
+                        refetch();
+                    }
+                })
 
-    return (
-        <div>
-            <input type="checkbox" id="deleteServiceConfirmModal" className="modal-toggle" />
-            <div className="modal modal-bottom sm:modal-middle">
-                <div className="modal-box">
-                    <h3 className="font-bold text-xl">Delete Service</h3>
-                    <p className="py-4 text-red-500 font-medium">Do you really want to delete {name} service? This process cannot be undone.</p>
-                    <div className="modal-action">
-                        <label htmlFor="deleteServiceConfirmModal" className="btn btn-success btn-md">Cancle</label>
-                        <label onClick={handleDelete} htmlFor="deleteServiceConfirmModal" className="btn btn-error">Delete</label>
-                    </div>
-                </div>
-            </div>
-        </div>
-    );
+        } else if (
+            /* Read more about handling dismissals below */
+            result.dismiss === Swal.DismissReason.cancel
+        ) {
+            swalWithBootstrapButtons.fire(
+                'Cancelled',
+                `${name} Service is Safe.`,
+                'error'
+            )
+            setServiceModal(null);
+        }
+    })
+
 };
 
 export default DeleteServiceConfirmModal;

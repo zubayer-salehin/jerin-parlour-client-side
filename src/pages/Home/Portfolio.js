@@ -16,14 +16,14 @@ import line1 from "../../assets/Line/line1.png"
 
 const Portfolio = () => {
     return (
-        <div className='pt-24'>
+        <div className='pt-24 px-4'>
             <h2 className='text-4xl font-bold text-secondary text-center pb-3 leading-tight sm:leading-none'>Our <span className='text-primary'>Portfolio</span></h2>
             <div className='flex items-center justify-center mb-12'>
                 <img className='w-20 h-4 mr-2' src={line} alt="" />
                 <FontAwesomeIcon className='text-3xl text-primary' icon={faSpa}></FontAwesomeIcon>
                 <img className='w-20 h-4 ml-2' src={line1} alt="" />
             </div>
-            <div className='grid grid-cols-4 gap-2.5'>
+            <div className='grid grid-cols-2 sm:grid-cols-4 gap-2.5'>
                 <img className='w-full h-full object-cover' src={image1} alt="" />
                 <img className='w-full h-full object-cover' src={image2} alt="" />
                 <img className='w-full h-full object-cover' src={image3} alt="" />

@@ -1,43 +1,61 @@
-import React from 'react';
-import { toast } from 'react-toastify';
+import Swal from 'sweetalert2';
+
 
 const DeleteBookingConfirmModal = ({ manageBookingModal, setManageBookingModal, refetch }) => {
 
     const { treatment, _id } = manageBookingModal
 
-    const handleDelete = () => {
-        fetch(`https://morning-brushlands-93158.herokuapp.com/manageBooking/${_id}`, {
-            method: 'DELETE',
-            headers: {
-                "content-type": "application/json",
-                "authorization": `Bearer ${localStorage.getItem("accessToken")}`
-            }
-        })
-            .then(res => res.json())
-            .then(data => {
-                if (data.deletedCount) {
-                    toast.success(`${treatment} service is deleted.`)
-                    setManageBookingModal(null);
-                    refetch();
+    const swalWithBootstrapButtons = Swal.mixin({
+        customClass: {
+            confirmButton: 'btn btn-success',
+            cancelButton: 'btn btn-danger'
+        },
+        buttonsStyling: false
+    })
+
+    swalWithBootstrapButtons.fire({
+        title: 'Are you sure?',
+        text: `${treatment} Booking won't be able to revert this!`,
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Yes, delete it!',
+        cancelButtonText: 'No, cancel!',
+        reverseButtons: true
+    }).then((result) => {
+        if (result.isConfirmed) {
+
+            fetch(`https://morning-brushlands-93158.herokuapp.com/manageBooking/${_id}`, {
+                method: 'DELETE',
+                headers: {
+                    "content-type": "application/json",
+                    "authorization": `Bearer ${localStorage.getItem("accessToken")}`
                 }
             })
-    }
-
-    return (
-        <div>
-            <input type="checkbox" id="deleteManageBookingModalConfirm" className="modal-toggle" />
-            <div className="modal modal-bottom sm:modal-middle">
-                <div className="modal-box">
-                    <h3 className="font-bold text-xl">Delete Booking</h3>
-                    <p className="py-4 text-red-500 font-medium">Do you really want to delete {treatment} Booking? This process cannot be undone.</p>
-                    <div className="modal-action">
-                        <label htmlFor="deleteManageBookingModalConfirm" className="btn btn-success btn-md">Cancle</label>
-                        <label onClick={handleDelete} htmlFor="deleteManageBookingModalConfirm" className="btn btn-error">Delete</label>
-                    </div>
-                </div>
-            </div>
-        </div>
-    );
+                .then(res => res.json())
+                .then(data => {
+                    if (data.deletedCount) {
+                        swalWithBootstrapButtons.fire(
+                            'Deleted!',
+                            `${treatment} Booking is deleted.`,
+                            'success'
+                        )
+                        setManageBookingModal(null);
+                        refetch();
+                    }
+                })
+        } else if (
+            /* Read more about handling dismissals below */
+            result.dismiss === Swal.DismissReason.cancel
+        ) {
+            swalWithBootstrapButtons.fire(
+                'Cancelled',
+                `${treatment} Booking is Safe.`,
+                'error'
+            )
+            setManageBookingModal(null);
+        }
+    })
 };
+
 
 export default DeleteBookingConfirmModal;

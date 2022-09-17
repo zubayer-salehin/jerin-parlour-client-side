@@ -66,3 +66,28 @@ html {
 ::-webkit-scrollbar-thumb:hover {
     background: #f31f66;
 }
+
+.swal2-confirm {
+    background-color: rgb(14, 171, 14);
+    border: 0px;
+    outline: none;
+    color: white;
+    text-transform: none;
+}
+
+.swal2-confirm:hover {
+    background-color: rgb(14, 171, 14);
+}
+
+.swal2-cancel {
+    background-color: rgb(220, 18, 18);
+    border: 0px;
+    outline: none;
+    color: white;
+    text-transform: none;
+    margin-right: 15px;
+}
+
+.swal2-cancel:hover {
+    background-color: rgb(220, 18, 18);
+}

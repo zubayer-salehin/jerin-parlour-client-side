@@ -10,8 +10,8 @@ const Header = () => {
 
     const [user] = useAuthState(auth);
     const [navbar, setNavbar] = useState(false);
-    const noScroll = "2xl:max-w-7xl mx-auto navbar sticky top-0 sm:px-20 2xl:px-0 py-4 z-20 bg-white";
-    const scrolly = "2xl:max-w-7xl mx-auto navbar sticky top-0 sm:px-20 2xl:px-0 py-4 z-20 bg-white navbarScrollBoxShadow";
+    const noScroll = "2xl:max-w-7xl mx-auto navbar sticky top-0 sm:px-20 2xl:px-0 py-3 z-20 bg-white";
+    const scrolly = "2xl:max-w-7xl mx-auto navbar sticky top-0 sm:px-20 2xl:px-0 py-3 z-20 bg-white navbarScrollBoxShadow";
 
     const scrollWindow = () => {
         if (window.scrollY >= 80) {
@@ -61,7 +61,7 @@ const Header = () => {
                     <label tabIndex="0" className="btn btn-ghost lg:hidden">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                     </label>
-                    <ul tabIndex="0" className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+                    <ul tabIndex="0" className="menu menu-compact dropdown-content mt-3 p-2 shadow-xl bg-base-100 w-52">
                         {menubar}
                     </ul>
                 </div>

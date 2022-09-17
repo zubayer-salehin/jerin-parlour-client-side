@@ -23,7 +23,7 @@ const Services = () => {
     return (
         <div id='services'>
             <div className='2xl:max-w-7xl mx-auto pt-24'>
-                <div className='px-5 sm:px-32 pb-5'>
+                <div className='px-8 sm:px-32 pb-5'>
                     <h2 className='text-4xl font-bold text-secondary text-center leading-tight sm:leading-none pb-3'>Our Awesome <span className='text-primary'>Services</span></h2>
                     <div className='flex items-center justify-center mb-12'>
                         <img className='w-20 h-4 mr-2' src={line} alt="" />

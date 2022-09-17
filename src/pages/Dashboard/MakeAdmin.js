@@ -1,5 +1,5 @@
 import React from 'react';
-import { toast } from 'react-toastify';
+import Swal from 'sweetalert2';
 
 const MakeAdmin = () => {
 
@@ -18,10 +18,19 @@ const MakeAdmin = () => {
                 .then(res => res.json())
                 .then(result => {
                     if (result.success) {
-                        toast.success(`${email} you are admin jerin website`);
+                        Swal.fire({
+                            icon: 'success',
+                            title: "Successfull",
+                            text: `${email} are admin jerin Parlour website`,
+                            timer: 4000
+                        })
                         e.target.reset();
                     } else {
-                        toast.error(`${email} invalid Email Address or Already have an admin jerin website`);
+                        Swal.fire({
+                            icon: 'error',
+                            title: "Opps!",
+                            text: `Please Enter Valid Email`,
+                        })
                     }
                 })
 
