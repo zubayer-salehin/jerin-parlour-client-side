@@ -48,9 +48,9 @@ const Header = () => {
                 <button onClick={() => {
                     signOut(auth)
                     localStorage.removeItem("accessToken")
-                }} className="btn btn-primary text-base-100 font-medium capitalize px-5 bg-primary" to="/login">Sign Out</button>
+                }} className="btn btn-primary text-base-100 font-medium capitalize px-5 bg-primary rounded-sm" to="/login">Sign Out</button>
                 :
-                <li><Link className="btn btn-primary text-base-100 font-medium capitalize px-8 bg-primary" smooth to="/login">Login</Link></li>
+                <li><Link className="btn btn-primary text-base-100 font-medium capitalize px-8 bg-primary rounded-sm" smooth to="/login">Login</Link></li>
         }
     </>
 

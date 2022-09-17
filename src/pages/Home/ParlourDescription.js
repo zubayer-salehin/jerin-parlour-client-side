@@ -1,4 +1,7 @@
 import React from 'react';
+import image1 from "../../assets/Image/img1.jpg"
+import image2 from "../../assets/Image/img2.jpg"
+
 
 const ParlourDescription = () => {
     return (
@@ -12,7 +15,7 @@ const ParlourDescription = () => {
                         <button className='btn capitalize rounded-sm border-0 mt-5 bg-white text-gray-500 hover:bg-gray-300 hover:text-white'>Read More</button>
                     </div>
                     <div>
-                        <img className='w-full h-full object-cover' src="https://beautyzone.dexignzone.com/xhtml/images/about/img1.jpg" alt="" />
+                        <img className='w-full h-full object-cover' src={image1} alt="" />
                     </div>
                 </div>
                 <div className='grid grid-cols-1 sm:grid-cols-2'>
@@ -23,7 +26,7 @@ const ParlourDescription = () => {
                         <button className='btn capitalize rounded-sm border-0 mt-5 bg-white text-gray-500 hover:bg-gray-300 hover:text-white'>Read More</button>
                     </div>
                     <div>
-                        <img className='w-full h-full object-cover' src="https://beautyzone.dexignzone.com/xhtml/images/about/img2.jpg" alt="" />
+                        <img className='w-full h-full object-cover' src={image2} alt="" />
                     </div>
                 </div>
             </div>
