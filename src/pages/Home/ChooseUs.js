@@ -3,10 +3,12 @@ import { faFeatherPointed, faGears, faPeopleGroup, faPercentage, faTrophy } from
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import picture from "../../assets/About-Us/beautiful-young-asian-woman-touching-her-clean-face-with-fresh-healthy-skin-isolated-white-wall-beauty-cosmetics-facial-treatment-concept 1.png"
 import { faSquareCheck } from '@fortawesome/free-regular-svg-icons';
+import "./Testimonials.css";
+
 
 const ChooseUs = () => {
     return (
-        <div id='about-us' className="bg-[url('https://beautyzone.dexignzone.com/xhtml/images/background/bg7.jpg')] bg-cover">
+        <div id='about-us' className="bg-[url('/src/assets/Background-Image/bg7.jpg')] bg-cover">
             <div className="hero py-28">
                 <div className="hero-content flex-col lg:flex-row-reverse">
                     <div className='sm:w-5/12 sm:ml-12 mt-10 sm:mt-0'>

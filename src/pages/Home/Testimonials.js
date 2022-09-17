@@ -11,6 +11,7 @@ import line1 from "../../assets/Line/line1.png"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSpa } from '@fortawesome/free-solid-svg-icons';
 
+
 const Testimonials = () => {
 
     const { data: reveiws, isLoading } = useQuery(["reveiws"], () => fetch(`https://morning-brushlands-93158.herokuapp.com/reveiws`)
@@ -21,7 +22,7 @@ const Testimonials = () => {
     }
 
     return (
-        <div className="bg-[url('https://beautyzone.dexignzone.com/xhtml/images/background/bg4.jpg')] bg-cover bg-bottom">
+        <div className="bg-[url('/src/assets/Background-Image/bg4.jpg')] bg-cover bg-bottom">
             <div className='px-10 sm:px-20 py-20'>
                 <h2 className='text-4xl font-bold text-secondary text-center pb-3'>Testimonials Of <span className='text-primary'>Our Clients</span></h2>
                 <div className='flex items-center justify-center mb-12'>
