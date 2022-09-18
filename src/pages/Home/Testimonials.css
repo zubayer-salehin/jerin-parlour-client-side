@@ -46,7 +46,7 @@
 }
 
 .bannerImage {
-    height: calc(100vh - 80px);
+    height: calc(100vh - 72px);
     object-fit: cover;
 }
 
@@ -109,7 +109,7 @@
     }
 
     .bannerImage {
-        height: calc(70vh - 80px);
+        height: calc(70vh - 72px);
         object-fit: cover;
     }
 }

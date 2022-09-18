@@ -5,13 +5,29 @@ import logo from "../assets/Website-Logo/Group 33092.png"
 import auth from '../firebase.init';
 import { useState } from 'react';
 import { HashLink as Link } from "react-router-hash-link";
+// import { useMemo } from 'react';
+
 
 const Header = () => {
 
     const [user] = useAuthState(auth);
     const [navbar, setNavbar] = useState(false);
-    const noScroll = "2xl:max-w-7xl mx-auto navbar sticky top-0 sm:px-20 2xl:px-0 py-3 z-20 bg-white";
-    const scrolly = "2xl:max-w-7xl mx-auto navbar sticky top-0 sm:px-20 2xl:px-0 py-3 z-20 bg-white navbarScrollBoxShadow";
+    // const [lastScroll, setLastScroll] = useState(window.scrollY);
+    // const [userScroll,setUserScroll] = useState(false);
+    const noScroll = "navbar sticky top-0 sm:px-20 2xl:px-0 py-3 z-20 bg-white";
+    const scrolly = "navbar sticky top-0 sm:px-20 2xl:px-0 py-3 z-20 bg-white navbarScrollBoxShadow";
+
+
+    // useMemo(() => {
+    //     window.addEventListener("scroll", () => {
+    //         if (lastScroll < window.scrollY) {
+    //             setUserScroll(true);
+    //         } else {
+    //             setUserScroll(false);
+    //         }
+    //         setLastScroll(window.scrollY);
+    //     })
+    // }, [lastScroll])
 
     const scrollWindow = () => {
         if (window.scrollY >= 80) {
@@ -56,26 +72,28 @@ const Header = () => {
 
     return (
         <div className={navbar ? scrolly : noScroll}>
-            <div className="navbar-start sm:w-3/12">
-                <div className="dropdown">
-                    <label tabIndex="0" className="btn btn-ghost lg:hidden">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
-                    </label>
-                    <ul tabIndex="0" className="menu menu-compact dropdown-content mt-3 p-2 shadow-xl bg-base-100 w-52">
+            <div className='container mx-auto'>
+                <div className="flex sm:w-3/12">
+                    <div className="dropdown">
+                        <label tabIndex="0" className="btn btn-ghost lg:hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+                        </label>
+                        <ul tabIndex="0" className="menu menu-compact dropdown-content mt-3 p-2 shadow-xl bg-base-100 w-52">
+                            {menubar}
+                        </ul>
+                    </div>
+                    <Link to="/home#"><img width="128px" src={logo} alt="" /></Link>
+                </div>
+                <div className="navbar-end hidden lg:flex sm:w-9/12">
+                    <ul className="menu menu-horizontal p-0">
                         {menubar}
                     </ul>
                 </div>
-                <Link to="/" className="w-32 h-12"><img src={logo} alt="" /></Link>
-            </div>
-            <div className="navbar-end hidden lg:flex w-9/12">
-                <ul className="menu menu-horizontal p-0">
-                    {menubar}
-                </ul>
-            </div>
-            <div className="navbar-end text-right block lg:hidden mr-7">
-                <label htmlFor="dashboard-open" tabIndex="1" className="btn btn-ghost lg:hidden">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
-                </label>
+                <div className="navbar-end text-right block lg:hidden mr-7">
+                    <label htmlFor="dashboard-open" tabIndex="1" className="btn btn-ghost lg:hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+                    </label>
+                </div>
             </div>
         </div>
     );
