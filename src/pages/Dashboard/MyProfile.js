@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { toast } from 'react-toastify';
+import Swal from 'sweetalert2';
 import auth from '../../firebase.init';
 import Loading from '../../shared/Loading/Loading';
 
@@ -61,7 +61,10 @@ const MyProfile = () => {
         const email = e.target.email.value;
         const profession = e.target.profession.value;
         const description = e.target.description.value;
-        const newUser = { name, address, email, profession, description, image: userPicture };
+        const newUser = {
+            name, address, email, profession, description,
+            image: userInfo?.image ? userInfo?.image : userPicture
+        };
 
         fetch(`https://morning-brushlands-93158.herokuapp.com/userUpdate?email=${email}`, {
             method: 'PUT',
@@ -74,13 +77,23 @@ const MyProfile = () => {
             .then(res => res.json())
             .then(data => {
                 if (data.success) {
-                    toast.success(`${name} Your Profile was updated`)
                     setUserUpdateStatus(userUpdateStatus + 1);
                     e.target.reset();
                     setLoading(false);
+                    Swal.fire({
+                        position: 'top-center',
+                        icon: 'success',
+                        title: `${name} Your Profile was updated`,
+                        showConfirmButton: true,
+                    })
                 } else {
-                    toast.error(`${name} Please again fill the form`);
                     setLoading(false);
+                    Swal.fire({
+                        position: 'top-center',
+                        icon: 'error',
+                        title: `${name} Please again fill the form`,
+                        showConfirmButton: true,
+                    })
                 }
             })
     }
