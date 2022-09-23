@@ -96,6 +96,14 @@
     box-shadow: 0 0 10px 0 rgb(0 0 0 / 20%)
 }
 
+@media only screen and (max-width: 400px) {
+    .bannerImagePositionSet {
+        top: 35%;
+        margin: 0px 40px;
+        left: 0%;
+    }
+}
+
 @media only screen and (max-width: 576px) {
     .bannerImagePositionSet {
         top: 35%;
