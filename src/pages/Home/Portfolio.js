@@ -17,7 +17,7 @@ import line1 from "../../assets/Line/line1.png"
 const Portfolio = () => {
     return (
         <div className='pt-24 px-4'>
-            <h2 className='text-4xl font-bold text-secondary text-center pb-3 leading-tight sm:leading-none'>Our <span className='text-primary'>Portfolio</span></h2>
+            <h2 className='text-3xl sm:text-4xl font-bold text-secondary text-center pb-3 leading-tight sm:leading-none'>Our <span className='text-primary'>Portfolio</span></h2>
             <div className='flex items-center justify-center mb-12'>
                 <img className='w-20 h-4 mr-2' src={line} alt="" />
                 <FontAwesomeIcon className='text-3xl text-primary' icon={faSpa}></FontAwesomeIcon>

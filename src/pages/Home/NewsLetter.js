@@ -17,8 +17,8 @@ const NewsLetter = () => {
     }
 
     return (
-        <div className="newslatterBackground px-5">
-            <div className='2xl:max-w-7xl mx-auto'>
+        <div className="newslatterBackground">
+            <div className='customContainer'>
                 <div className='text-secondary text-center pt-20 pb-28'>
                     <FontAwesomeIcon className='text-4xl text-primary' icon={faSpa}></FontAwesomeIcon>
                     <h3 className='text-3xl font-bold'>Jerin Parlour</h3>

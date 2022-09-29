@@ -84,7 +84,7 @@
 
 .bannerImagePositionSet {
     top: 23%;
-    left: 8%;
+    left: 9%;
 }
 
 .bannerTitleStyle {
@@ -96,20 +96,93 @@
     box-shadow: 0 0 10px 0 rgb(0 0 0 / 20%)
 }
 
-@media only screen and (max-width: 400px) {
+.navbarPaddingZero {
+    padding-right: 0px;
+    padding-left: 0px;
+}
+
+
+@media only screen and (max-width: 384px) {
+    .bannerImagePositionSet {
+        top: 28%;
+        left: 0%;
+        padding: 0px 48px;
+    }
+
+    .smallDeviceButton {
+        padding: 8px 15px;
+    }
+
+    .smallDeviceTitle {
+        font-size: 1.5rem;
+    }
+}
+
+@media only screen and (min-width: 385px) {
+    .bannerImagePositionSet {
+        top: 30%;
+        left: 0%;
+        padding: 0px 40px;
+    }
+}
+
+
+@media only screen and (min-width: 400px) {
+    .bannerImagePositionSet {
+        top: 31%;
+        left: 0%;
+        padding: 0px 40px;
+    }
+}
+
+@media only screen and (min-width: 420px) {
+    .bannerImagePositionSet {
+        top: 32%;
+        left: 0%;
+        padding: 0px 40px;
+    }
+}
+
+@media only screen and (min-width: 440px) {
+    .bannerImagePositionSet {
+        top: 37%;
+        left: 7%;
+        padding: 0px;
+    }
+}
+
+@media only screen and (min-width: 460px) {
+    .bannerImagePositionSet {
+        top: 36%;
+        left: 10%;
+        padding: 0px;
+    }
+}
+
+@media only screen and (min-width: 500px) {
     .bannerImagePositionSet {
         top: 35%;
-        margin: 0px 40px;
-        left: 0%;
+        left: 13%;
+        padding: 0px;
+    }
+}
+
+@media only screen and (min-width: 540px) {
+    .bannerImagePositionSet {
+        top: 35%;
+        left: 18%;
+        padding: 0px;
+    }
+}
+
+@media only screen and (min-width: 576px) {
+    .bannerImagePositionSet {
+        top: 23%;
+        left: 9%;
     }
 }
 
 @media only screen and (max-width: 576px) {
-    .bannerImagePositionSet {
-        top: 35%;
-        margin: 0px 20px;
-        left: 0%;
-    }
 
     .bannerTitleStyle {
         letter-spacing: 1px;
@@ -133,5 +206,29 @@
     .bannerImagePositionSet {
         top: 30%;
         left: 20%;
+    }
+}
+
+.logo {
+    width: 128px;
+}
+
+@media only screen and (max-width: 399px) {
+    .logo {
+        width: 128px;
+        padding-top: 5px;
+    }
+}
+
+@media only screen and (min-width: 400px) {
+    .logo {
+        width: 128px;
+        padding-top: 3px
+    }
+}
+
+@media only screen and (min-width: 576px) {
+    .logo {
+        width: 128px;
     }
 }

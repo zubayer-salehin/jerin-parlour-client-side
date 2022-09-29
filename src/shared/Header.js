@@ -5,29 +5,14 @@ import logo from "../assets/Website-Logo/Group 33092.png"
 import auth from '../firebase.init';
 import { useState } from 'react';
 import { HashLink as Link } from "react-router-hash-link";
-// import { useMemo } from 'react';
 
 
 const Header = () => {
 
     const [user] = useAuthState(auth);
     const [navbar, setNavbar] = useState(false);
-    // const [lastScroll, setLastScroll] = useState(window.scrollY);
-    // const [userScroll,setUserScroll] = useState(false);
-    const noScroll = "navbar sticky top-0 sm:px-20 2xl:px-0 py-3 z-20 bg-white";
-    const scrolly = "navbar sticky top-0 sm:px-20 2xl:px-0 py-3 z-20 bg-white navbarScrollBoxShadow";
-
-
-    // useMemo(() => {
-    //     window.addEventListener("scroll", () => {
-    //         if (lastScroll < window.scrollY) {
-    //             setUserScroll(true);
-    //         } else {
-    //             setUserScroll(false);
-    //         }
-    //         setLastScroll(window.scrollY);
-    //     })
-    // }, [lastScroll])
+    const noScroll = "navbar sticky top-0 py-3 z-20 bg-white";
+    const scrolly = "navbar sticky top-0 py-3 z-20 bg-white navbarScrollBoxShadow";
 
     const scrollWindow = () => {
         if (window.scrollY >= 80) {
@@ -72,7 +57,7 @@ const Header = () => {
 
     return (
         <div className={navbar ? scrolly : noScroll}>
-            <div className='container mx-auto'>
+            <div className='customContainer navbarPaddingZero'>
                 <div className="flex sm:w-3/12">
                     <div className="dropdown">
                         <label tabIndex="0" className="btn btn-ghost lg:hidden">
@@ -82,7 +67,7 @@ const Header = () => {
                             {menubar}
                         </ul>
                     </div>
-                    <Link to="/home#"><img width="128px" src={logo} alt="" /></Link>
+                    <Link to="/home#"><img className='logo' src={logo} alt="" /></Link>
                 </div>
                 <div className="navbar-end hidden lg:flex sm:w-9/12">
                     <ul className="menu menu-horizontal p-0">

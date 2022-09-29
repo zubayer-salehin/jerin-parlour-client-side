@@ -10,9 +10,8 @@ const Footer = () => {
     const year = new Date().getFullYear();
 
     return (
-        <footer className="bg-primary text-white text-center sm:text-left px-10 sm:px-20">
-            <div className='2xl:max-w-7xl mx-auto'>
-                <div className="container pt-8 pb-5">
+        <footer className="bg-primary text-white text-center sm:text-left">
+                <div className="customContainer navbarPaddingZero pt-8 pb-5">
                     <div className="grid sm:grid-cols-12 gap-10 py-4">
                         <div className="sm:col-start-1 sm:col-end-5 mb-4 mb-lg-0 mt-2">
                             <div className='flex'>
@@ -72,7 +71,6 @@ const Footer = () => {
                         <p className=" mb-0 py-2">Copyright © {year} Jerin's Parlour. All rights reserved.</p>
                     </div>
                 </div>
-            </div>
         </footer>
     );
 };
