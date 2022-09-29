@@ -5,14 +5,22 @@ import logo from "../assets/Website-Logo/Group 33092.png"
 import auth from '../firebase.init';
 import { useState } from 'react';
 import { HashLink as Link } from "react-router-hash-link";
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 
 
 const Header = () => {
 
+    const location = useLocation();
     const [user] = useAuthState(auth);
     const [navbar, setNavbar] = useState(false);
     const noScroll = "navbar sticky top-0 py-3 z-20 bg-white";
     const scrolly = "navbar sticky top-0 py-3 z-20 bg-white navbarScrollBoxShadow";
+    const [activeLink, setActiveLink] = useState("");
+
+    useEffect(() => {
+        setActiveLink(location.pathname + location.hash);
+    }, [location, activeLink])
 
     const scrollWindow = () => {
         if (window.scrollY >= 80) {
@@ -26,23 +34,23 @@ const Header = () => {
 
     const menubar = <>
         <li>
-            <Link smooth to="/home#" >Home</Link>
+            <Link className={`${activeLink === "/home" ? "text-primary" : ""}`} smooth to="/home#" >Home</Link>
         </li>
         <li>
-            <Link smooth to="/home#services">Services</Link>
+            <Link className={`${activeLink === "/home#services" ? "text-primary" : ""}`} smooth to="/home#services">Services</Link>
         </li>
         {user &&
             <li>
-                <Link smooth to="/dashboard">Dashboard</Link>
+                <Link className={`${activeLink === "/dashboard" ? "text-primary" : ""}`} smooth to="/dashboard">Dashboard</Link>
             </li>}
         <li>
-            <Link smooth to="/home#about-us">About Us</Link>
+            <Link className={`${activeLink === "/home#about-us" ? "text-primary" : ""}`} smooth to="/home#about-us">About Us</Link>
         </li>
         <li>
-            <Link smooth to="/home#team">Team</Link>
+            <Link className={`${activeLink === "/home#team" ? "text-primary" : ""}`} smooth to="/home#team">Team</Link>
         </li>
         <li className='mr-4'>
-            <Link smooth to="/home#contact">Contact</Link>
+            <Link className={`${activeLink === "/home#contact" ? "text-primary" : ""}`} smooth to="/home#contact">Contact</Link>
         </li>
         {
             user ?

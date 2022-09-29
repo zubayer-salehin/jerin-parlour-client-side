@@ -39,12 +39,6 @@ html {
     font-weight: 500;
 }
 
-/* .active {
-    background-color: white;
-    color: #f63c7a;
-    border-bottom: 2px solid red !important;
-} */
-
 /* width */
 ::-webkit-scrollbar {
     width: 13px;
@@ -133,4 +127,9 @@ html {
             max-width: 1140px;
         }
     }
+}
+
+/*  Active Link CSS */
+ul>li>a:hover {
+    background-color: white;
 }
