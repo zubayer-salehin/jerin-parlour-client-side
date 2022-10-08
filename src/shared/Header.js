@@ -75,7 +75,7 @@ const Header = () => {
                             {menubar}
                         </ul>
                     </div>
-                    <Link to="/home#"><img className='logo' src={logo} alt="" /></Link>
+                    <Link className='flex items-center' to="/home#"><img className='logo' src={logo} alt="" /></Link>
                 </div>
                 <div className="navbar-end hidden lg:flex sm:w-9/12">
                     <ul className="menu menu-horizontal p-0">

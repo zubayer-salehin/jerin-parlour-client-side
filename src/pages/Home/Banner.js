@@ -24,22 +24,22 @@ const Banner = () => {
             <SwiperSlide className='relative'>
                 <img className='bannerImage' src={slider1} alt="" />
                 <div className='absolute bannerImagePositionSet'>
-                    <h2 className='text-center sm:text-left text-3xl sm:text-5xl font-bold text-primary bannerTitleStyle smallDeviceTitle'>BeautyZone Hair Salon <br /> Creating Beauty</h2>
-                    <p className='pt-6 pb-6 hidden sm:block'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, velit <br /> suscipit, a doloribus repellat, cum possimus saepe eaque quidem <br /> quasi ad eligendi dolorem. Voluptatibus, nobis.</p>
-                    <div className='text-center sm:text-left'>
-                        <button className='mt-14 sm:mt-0 px-7 py-3.5 mr-5 bg-primary text-white rounded-sm smallDeviceButton'>Get A Quote</button>
-                        <button className='px-7 py-3.5 bg-teal-500 text-white rounded-sm smallDeviceButton'>About Us</button>
+                    <h2 className='text-left text-4xl sm:text-5xl font-bold text-primary bannerTitleStyle'>BeautyZone Hair Salon <br /> Creating Beauty</h2>
+                    <p className='pt-6 pb-6 hidden sm:block'>A Jerin Parlour is an establishment dealing with cosmetic treatments <br /> for men and women. Other variations of this type of business <br /> include hair salons, spas, and medical spas.</p>
+                    <div className='mt-6 sm:mt-0'>
+                        <button className='px-4 sm:px-7 py-2 sm:py-3.5 mr-3 sm:mr-5 bg-primary text-white text-sm sm:text-base rounded-sm'>Get A Quote</button>
+                        <button className='px-4 sm:px-7 py-2 sm:py-3.5 bg-teal-500 text-white text-sm sm:text-base rounded-sm '>About Us</button>
                     </div>
                 </div>
             </SwiperSlide>
             <SwiperSlide className='relative'>
                 <img className='bannerImage' src={slider2} alt="" />
                 <div className='absolute bannerImagePositionSet'>
-                    <h2 className='text-center sm:text-left text-3xl sm:text-5xl font-bold text-primary bannerTitleStyle smallDeviceTitle'>BeautyZone Hair Salon <br /> Creating Beauty</h2>
-                    <p className='pt-6 pb-6 hidden sm:block'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, velit <br /> suscipit, a doloribus repellat, cum possimus saepe eaque quidem <br /> quasi ad eligendi dolorem. Voluptatibus, nobis.</p>
-                    <div className='text-center sm:text-left'>
-                        <button className='mt-14 sm:mt-0 px-7 py-3.5 mr-5 bg-primary text-white rounded-sm smallDeviceButton'>Get A Quote</button>
-                        <button className='px-7 py-3.5 bg-teal-500 text-white rounded-sm smallDeviceButton'>About Us</button>
+                    <h2 className='text-left text-4xl sm:text-5xl font-bold text-primary bannerTitleStyle'>BeautyZone Hair Salon <br /> Creating Beauty</h2>
+                    <p className='pt-6 pb-6 hidden sm:block'>A Jerin Parlour is an establishment dealing with cosmetic treatments <br /> for men and women. Other variations of this type of business <br /> include hair salons, spas, and medical spas.</p>
+                    <div className='mt-6 sm:mt-0'>
+                        <button className='px-4 sm:px-7 py-2 sm:py-3.5 mr-3 sm:mr-5 bg-primary text-white text-sm sm:text-base rounded-sm '>Get A Quote</button>
+                        <button className='px-4 sm:px-7 py-2 sm:py-3.5 bg-teal-500 text-white text-sm sm:text-base rounded-sm '>About Us</button>
                     </div>
                 </div>
             </SwiperSlide>

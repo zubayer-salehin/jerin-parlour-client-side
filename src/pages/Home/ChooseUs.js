@@ -14,7 +14,7 @@ const ChooseUs = () => {
                     <div className="hero-content flex-col lg:flex-row-reverse">
                         <div className='sm:w-6/12 sm:ml-12'>
                             <h2 className="text-3xl sm:text-4xl font-bold text-center sm:text-left text-secondary leading-tight">Why Our Clients & Customer <span className='text-primary'>Choose Us</span></h2>
-                            <p className="py-8 sm:py-5 text-sm text-slate-500 sm:pr-16">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Debitis ullam ipsum eos nostrum inventore perferendis nisi mollitia voluptas? Necessitatibus blanditiis voluptatibus unde nisi inventore odio!</p>
+                            <p className="py-8 sm:py-5 text-sm text-slate-500 sm:pr-16">At the Jerin Parlour, we have confidence in excellence with a heart. We have made a salon that offers the most noteworthy quality hair benefits in a setting that is more advantageous for the earth, our visitors, and our staff.</p>
                             <div className='grid grid-cols-1 sm:grid-cols-2 gap-8 pt-5 sm:pt-7'>
                                 <div className='flex items-center gap-4 sm:gap-5'>
                                     <FontAwesomeIcon className='w-12 h-12 text-primary' icon={faFeatherPointed} />
