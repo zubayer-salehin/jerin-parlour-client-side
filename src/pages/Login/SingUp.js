@@ -23,7 +23,7 @@ const SingUp = () => {
         if (token) {
             navigate("/home");
             if (userName) {
-                fetch(`https://morning-brushlands-93158.herokuapp.com/userUpdate?email=${userEmail}`, {
+                fetch(`https://jerin-parlour-server-side.onrender.com/userUpdate?email=${userEmail}`, {
                     method: 'PUT',
                     headers: {
                         'Content-Type': 'application/json',

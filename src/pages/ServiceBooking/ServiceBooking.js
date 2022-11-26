@@ -53,7 +53,7 @@ const ServiceBooking = () => {
 
     useEffect(() => {
         setLoading(true);
-        fetch(`https://morning-brushlands-93158.herokuapp.com/services/${id}`, {
+        fetch(`https://jerin-parlour-server-side.onrender.com/services/${id}`, {
             method: "GET",
             headers: {
                 "content-type": "application/json",
@@ -67,7 +67,7 @@ const ServiceBooking = () => {
             })
     }, [id])
 
-    const { data: singleService } = useQuery(["available", selectDate, id], () => fetch(`https://morning-brushlands-93158.herokuapp.com/available?date=${selectDate}&&id=${id}`)
+    const { data: singleService } = useQuery(["available", selectDate, id], () => fetch(`https://jerin-parlour-server-side.onrender.com/available?date=${selectDate}&&id=${id}`)
         .then(res => res.json())
     );
 
@@ -83,7 +83,7 @@ const ServiceBooking = () => {
         const booking = { clientName, clientEmail, treatment: service?.name, date, slot, address, phone, price: service?.price }
 
 
-        fetch("https://morning-brushlands-93158.herokuapp.com/booking", {
+        fetch("https://jerin-parlour-server-side.onrender.com/booking", {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',

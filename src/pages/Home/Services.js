@@ -12,7 +12,7 @@ const Services = () => {
 
     const navigate = useNavigate();
 
-    const { data: services, isLoading } = useQuery(["allServices"], () => fetch(`https://morning-brushlands-93158.herokuapp.com/allServices`)
+    const { data: services, isLoading } = useQuery(["allServices"], () => fetch(`https://jerin-parlour-server-side.onrender.com/allServices`)
         .then(res => res.json())
     );
 

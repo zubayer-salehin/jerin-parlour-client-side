@@ -24,7 +24,7 @@ const DeleteBookingListConfirmModal = ({ bookingModal, setBookingModal, refetch 
     }).then((result) => {
         if (result.isConfirmed) {
 
-            fetch(`https://morning-brushlands-93158.herokuapp.com/booking/${_id}`, {
+            fetch(`https://jerin-parlour-server-side.onrender.com/booking/${_id}`, {
                 method: 'DELETE',
                 headers: {
                     "content-type": "application/json",

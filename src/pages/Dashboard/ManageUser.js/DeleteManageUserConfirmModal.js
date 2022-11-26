@@ -24,7 +24,7 @@ const DeleteManageUserConfirmModal = ({ userModal, setUserModal, refetch }) => {
     }).then((result) => {
         if (result.isConfirmed) {
 
-            fetch(`https://morning-brushlands-93158.herokuapp.com/user?id=${_id}&&uid=${uid}`, {
+            fetch(`https://jerin-parlour-server-side.onrender.com/user?id=${_id}&&uid=${uid}`, {
                 method: 'DELETE',
                 headers: {
                     "content-type": "application/json",

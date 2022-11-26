@@ -14,7 +14,7 @@ import { faSpa } from '@fortawesome/free-solid-svg-icons';
 
 const Testimonials = () => {
 
-    const { data: reveiws, isLoading } = useQuery(["reveiws"], () => fetch(`https://morning-brushlands-93158.herokuapp.com/reveiws`)
+    const { data: reveiws, isLoading } = useQuery(["reveiws"], () => fetch(`https://jerin-parlour-server-side.onrender.com/reveiws`)
         .then(res => res.json()));
 
     if (isLoading) {

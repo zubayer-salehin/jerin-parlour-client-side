@@ -14,7 +14,7 @@ const PayToProced = () => {
 
     useEffect(() => {
         setLoading(true);
-        fetch(`https://morning-brushlands-93158.herokuapp.com/booking/${id}`, {
+        fetch(`https://jerin-parlour-server-side.onrender.com/booking/${id}`, {
             method: "GET",
             headers: {
                 "content-type": "application/json",

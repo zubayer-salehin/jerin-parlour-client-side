@@ -37,7 +37,7 @@ const AddReveiw = () => {
         const rating = e.target.rating.value;
         const newUser = { name, profession, description, image:userImage, rating };
 
-        fetch(`https://morning-brushlands-93158.herokuapp.com/reveiws?name=${name}`, {
+        fetch(`https://jerin-parlour-server-side.onrender.com/reveiws?name=${name}`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

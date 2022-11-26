@@ -8,7 +8,7 @@ import ManageServiceRow from './ManageServiceRow';
 const ManageService = () => {
 
     const [serviceModal, setServiceModal] = useState(null);
-    const url = `https://morning-brushlands-93158.herokuapp.com/services`
+    const url = `https://jerin-parlour-server-side.onrender.com/services`
     const { data: services, isLoading, refetch } = useQuery('booking', () => fetch(url, {
         method: 'GET',
         headers: {
